@@ -35,6 +35,8 @@ kotlin {
         }
         jsMain.dependencies {
             implementation(libs.wrappers.browser)
+            
+            implementation(libs.compose.html.core)
         }
     }
 }
