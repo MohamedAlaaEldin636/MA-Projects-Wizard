@@ -1,0 +1,12 @@
+2026-06-30 21:18:30.819 [main] DEBUG io.ktor.server.Application - Java Home: Y:\Dev\.gradle\jdks
+2026-06-30 21:18:30.824 [main] DEBUG io.ktor.server.Application - Class Loader: jdk.internal.loader.ClassLoaders$AppClassLoader@70dea4e: [file:/Y:/Dev/IntelliJ/Proj/MA%20Projects%20Wizard/webApp/.kobweb/server/server.jar!/okio/]
+2026-06-30 21:18:30.828 [main] INFO  io.ktor.server.Application - No ktor.deployment.watch patterns match classpath entries, automatic reload is not active
+2026-06-30 21:18:30.868 [main] INFO  io.ktor.server.Application - Initializing server engine for Kobweb project "MA Projects Wizard"
+2026-06-30 21:18:30.872 [main] WARN  io.ktor.server.Application - API jar specified but does not exist! Please fix conf.yaml, updating the path (or removing the value if you aren't declaring API endpoints). Invalid path: "build\libs\ma_projects_wizard.jar"
+2026-06-30 21:18:31.004 [main] INFO  io.ktor.server.Application - CORS: No hosts registered.
+2026-06-30 21:18:31.019 [main] INFO  io.ktor.server.Application - Application started in 0.504 seconds.
+2026-06-30 21:18:31.269 [main] INFO  io.ktor.server.Application - Responding at http://127.0.0.1:8081
+2026-06-30 21:19:14.429 [DefaultDispatcher-worker-3] DEBUG io.ktor.server.Application - Served fallback index.html file in response to "/"
+2026-06-30 21:19:16.755 [DefaultDispatcher-worker-3] DEBUG io.ktor.server.Application - Served fallback index.html file in response to "/6e23e5428398b92da386.wasm"
+2026-06-30 21:19:17.078 [DefaultDispatcher-worker-2] DEBUG io.ktor.server.Application - Served fallback index.html file in response to "/6e23e5428398b92da386.wasm"
+2026-06-30 21:19:17.085 [DefaultDispatcher-worker-3] DEBUG io.ktor.server.Application - Client connected and is requesting kobweb status events.

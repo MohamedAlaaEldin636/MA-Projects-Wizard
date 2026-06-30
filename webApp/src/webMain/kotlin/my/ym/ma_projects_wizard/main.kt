@@ -4,7 +4,8 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 
 @OptIn(ExperimentalComposeUiApi::class)
 fun main() {
-    val isRendered = renderComposeHtmlApp()
+	// BuildKonfig.IS_KOBWEB_ACTIVE // todo maybe useless Inshallah.
+	val isRendered = renderComposeHtmlApp()
 	if (isRendered.not()) {
 		renderComposeComposableApp()
 	}

@@ -1,0 +1,14 @@
+site:
+  title: "MA Projects Wizard"
+
+server:
+  files:
+    dev:
+      contentRoot: "build/processedResources/js/main/public"
+      script: "build/kotlin-webpack/js/developmentExecutable/ma_projects_wizard.js"
+      api: "build/libs/ma_projects_wizard.jar"
+    prod:
+      script: "build/kotlin-webpack/js/productionExecutable/ma_projects_wizard.js"
+      siteRoot: ".kobweb/site"
+
+  port: 8080
