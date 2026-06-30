@@ -27,6 +27,8 @@ import com.varabyte.kobweb.silk.style.toAttrs
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import com.varabyte.kobweb.silk.theme.colors.ColorPalettes
+import com.varabyte.kobweb.silk.theme.colors.palette.color
+import com.varabyte.kobweb.silk.theme.colors.palette.toPalette
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.fr
 import org.jetbrains.compose.web.css.px
@@ -37,6 +39,7 @@ import my.ym.ma_projects_wizard.HeadlineTextStyle
 import my.ym.ma_projects_wizard.SubheadlineTextStyle
 import my.ym.ma_projects_wizard.components.layouts.PageLayoutData
 import my.ym.ma_projects_wizard.toSitePalette
+import org.jetbrains.compose.web.dom.H1
 
 // Container that has a tagline and grid on desktop, and just the tagline on mobile
 val HeroContainerStyle = CssStyle {
@@ -85,6 +88,10 @@ fun HomePage() {
             val sitePalette = ColorMode.current.toSitePalette()
 
             Column(Modifier.gap(2.cssRem)) {
+                H1 {
+                    SpanText(text = "Hi 1", Modifier.color(ColorMode.current.toPalette().color))
+                    SpanText(text = "Hi 2", Modifier.color(sitePalette.brand.accent))
+                }
                 Div(HeadlineTextStyle.toAttrs()) {
                     SpanText(
                         "Use this template as your starting point for ", Modifier.color(
@@ -114,7 +121,8 @@ fun HomePage() {
                     // Change this click handler with your call-to-action behavior
                     // here. Link to an order page? Open a calendar UI? Play a movie?
                     // Up to you!
-                    ctx.router.tryRoutingTo("/about")
+                    ctx.router.tryRoutingTo("/doodle")
+                    //ctx.router.tryRoutingTo("/about")
                 }, colorPalette = ColorPalettes.Blue) {
                     Text("This could be your CTA")
                 }
