@@ -11,8 +11,6 @@ import androidx.compose.runtime.setValue
 import com.varabyte.kobweb.browser.file.readBytes
 import com.varabyte.kobweb.compose.ui.toAttrs
 import org.jetbrains.compose.web.dom.Div
-import org.w3c.dom.Element
-import org.w3c.dom.parsing.DOMParser
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
@@ -319,6 +317,10 @@ private fun OutputContent(
 	}
 }
 
+// todo better code structuring to be able to show on desktop too Inshallah.
+// todo multiple files at same time Inshallah + drag n drop Inshallah.
+//  files should have own placement as a small flow row 2 rows max and hz scroll with close click
+//  in case want files + 1 text as well Inshallah
 // todo 3 more buttons 1- inverse background switch, 2- show svg text 3- show vector drawable text 4- show image
 
 private suspend fun OutputValue.saveAsSvg(
@@ -339,11 +341,7 @@ private suspend fun OutputValue.saveAsVectorDrawable(
 	)
 }
 
-// todo handle error ex. on save returns nothing so snackbar or msg Inshallah
-
-// todo try to convert svg to vd not working or vice versa wa7da mnhom ya3ne Inshallah
-
-private fun OutputValue.getFileNameWithoutExtension(
+private fun getFileNameWithoutExtension(
 	contentHolder: ContentHolder
 ): String {
 	return contentHolder.getFileNameOrNull()
