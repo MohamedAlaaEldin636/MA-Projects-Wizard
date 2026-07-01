@@ -74,6 +74,11 @@ kotlin {
             implementation(libs.kobweb.silk)
             implementation(libs.kobweb.silk.icons.fa)
             implementation(libs.kobwebx.markdown)
+            
+            implementation(npm("svg2vectordrawable", "2.9.1"))
+            implementation(npm("vector-drawable-svg", "1.1.4"))
+            //implementation(npm("vd2svg", "0.3.3"))
+            //implementation(npm("stream-browserify", "3.0.0"))
         }
         
         /*jvmMain.dependencies {

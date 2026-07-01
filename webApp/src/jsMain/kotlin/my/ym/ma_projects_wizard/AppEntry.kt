@@ -20,6 +20,11 @@ import com.varabyte.kobweb.silk.theme.colors.saveToLocalStorage
 import com.varabyte.kobweb.silk.theme.colors.systemPreference
 import org.jetbrains.compose.web.css.vh
 
+// todo -> browser says some skiko errors why in kobweb ?! recheck these errors Inshallah.
+
+// todo -> enhancements in custom palette make colorPalette like ColorPalettes.Blue for Button Inshallah,
+//  for auto hover and press effects and become dark mode friendly too Inshallah.
+
 private const val COLOR_MODE_KEY = "ma_projects_wizard:colorMode"
 
 @InitSilk

@@ -3,6 +3,7 @@ package my.ym.ma_projects_wizard.components.sections
 import androidx.compose.runtime.*
 import com.varabyte.kobweb.browser.dom.ElementTarget
 import com.varabyte.kobweb.compose.css.functions.clamp
+import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.foundation.layout.Spacer
@@ -22,6 +23,7 @@ import com.varabyte.kobweb.silk.components.overlay.Overlay
 import com.varabyte.kobweb.silk.components.overlay.OverlayVars
 import com.varabyte.kobweb.silk.components.overlay.PopupPlacement
 import com.varabyte.kobweb.silk.components.overlay.Tooltip
+import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.style.CssStyle
 import com.varabyte.kobweb.silk.style.animation.Keyframes
 import com.varabyte.kobweb.silk.style.animation.toAnimation
@@ -34,6 +36,8 @@ import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.*
 import my.ym.ma_projects_wizard.components.widgets.IconButton
 import my.ym.ma_projects_wizard.toSitePalette
+import org.jetbrains.compose.web.dom.H2
+import org.jetbrains.compose.web.dom.Text
 
 val NavHeaderStyle = CssStyle.base {
     Modifier.fillMaxWidth().padding(1.cssRem)
@@ -100,9 +104,26 @@ enum class SideMenuState {
 @Composable
 fun NavHeader() {
     Row(NavHeaderStyle.toModifier(), verticalAlignment = Alignment.CenterVertically) {
-        Link("https://kobweb.varabyte.com") {
+        /*Link("https://kobweb.varabyte.com") {
             // Block display overrides inline display of the <img> tag, so it calculates centering better
             Image("/kobweb-logo.png", "Kobweb Logo", Modifier.height(2.cssRem).display(DisplayStyle.Block))
+        }*/
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(1.cssRem),
+        ) {
+            Image(
+                modifier = Modifier.height(3.cssRem).display(DisplayStyle.Block),
+                src = "/logo.png",
+                description = "Logo"
+            )
+            
+            H2 {
+                SpanText(
+                    modifier = Modifier.color(ColorMode.current.toSitePalette().brand.primary),
+                    text = "MA Projects Wizard"
+                )
+            }
         }
 
         Spacer()

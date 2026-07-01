@@ -23,13 +23,12 @@ import org.jetbrains.compose.web.css.fr
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.css.vh
-import my.ym.ma_projects_wizard.components.sections.Footer
 import my.ym.ma_projects_wizard.components.sections.NavHeader
 import my.ym.ma_projects_wizard.toSitePalette
 
 val PageContentStyle = CssStyle {
-    base { Modifier.fillMaxSize().padding(leftRight = 2.cssRem, top = 4.cssRem) }
-    Breakpoint.MD { Modifier.maxWidth(60.cssRem) }
+    base { Modifier.fillMaxSize().padding(all = 1.cssRem) }
+    Breakpoint.MD { Modifier.maxWidth(70.cssRem) }
 }
 
 // NOTE: This is a fun little graphic that showcases what you can do with SVG. However, this probably does not make
@@ -105,6 +104,6 @@ fun PageLayout(ctx: PageContext, content: @Composable ColumnScope.() -> Unit) {
             }
         }
         // Associate the footer with the row that will get pushed off the bottom of the page if it can't fit.
-        Footer(Modifier.fillMaxWidth().gridRow(2))
+        //Footer(Modifier.fillMaxWidth().gridRow(2))
     }
 }
