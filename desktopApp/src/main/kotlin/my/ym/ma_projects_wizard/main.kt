@@ -8,6 +8,6 @@ fun main() = application {
         onCloseRequest = ::exitApplication,
         title = "MA Projects Wizard",
     ) {
-        App()
+        //App()
     }
 }
