@@ -1,0 +1,3 @@
+package my.ym.ma_projects_wizard.components.sections.converterOfVdAndSvgPage
+
+data object ConverterOfVdAndSvgPageScope

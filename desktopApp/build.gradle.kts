@@ -6,6 +6,12 @@ plugins {
     alias(libs.plugins.composeCompiler)
 }
 
+kotlin {
+    compilerOptions {
+        freeCompilerArgs.add("-Xcontext-parameters")
+    }
+}
+
 dependencies {
     implementation(projects.shared)
 

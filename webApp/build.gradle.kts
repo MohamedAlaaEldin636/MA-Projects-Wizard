@@ -28,22 +28,24 @@ kobweb {
 
 kotlin {
     configAsKobwebApplication(moduleName = "ma_projects_wizard", includeServer = false)
+    
+    compilerOptions {
+        freeCompilerArgs.add("-Xcontext-parameters")
+    }
 
     sourceSets {
         jsMain.dependencies {
             implementation(projects.shared)
             
             implementation(libs.compose.runtime)
-        
+            implementation(libs.androidx.lifecycle.viewmodel)
+            
             implementation(libs.compose.html.core)
             
             implementation(libs.kobweb.core)
             implementation(libs.kobweb.silk)
-            implementation(libs.kobweb.silk.icons.fa)
+            //implementation(libs.kobweb.silk.icons.fa)
             implementation(libs.kobwebx.markdown)
-            
-            implementation(npm("svg2vectordrawable", "2.9.1"))
-            implementation(npm("vector-drawable-svg", "1.1.4"))
         }
     }
 }

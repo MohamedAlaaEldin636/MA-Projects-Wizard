@@ -1,0 +1,9 @@
+package my.ym.ma_projects_wizard.viewModels.converterOfVdAndSvg
+
+import my.ym.ma_projects_wizard.viewModels.BaseViewModelWithStateAndIntent
+import my.ym.ma_projects_wizard.viewModels.converterOfVdAndSvg.models.ConverterOfVdAndSvgIntent
+import my.ym.ma_projects_wizard.viewModels.converterOfVdAndSvg.models.ConverterOfVdAndSvgState
+
+abstract class ConverterOfVdAndSvgViewModel : BaseViewModelWithStateAndIntent<ConverterOfVdAndSvgState, ConverterOfVdAndSvgIntent>(
+	initialState = ConverterOfVdAndSvgState(),
+)

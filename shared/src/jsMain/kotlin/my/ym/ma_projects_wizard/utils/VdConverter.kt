@@ -1,14 +1,3 @@
-/*
-@file:JsModule("vd2svg")
-@file:JsNonModule
-package my.ym.ma_projects_wizard.utils
-
-import kotlin.js.Promise
-
-// Bind to the default export of vd2svg
-@JsName("default")
-external fun vd2Svg(vectorDrawableXml: String): Promise<String>
-*/
 @file:JsModule("vector-drawable-svg")
 @file:JsNonModule
 package my.ym.ma_projects_wizard.utils

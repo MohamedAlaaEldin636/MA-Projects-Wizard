@@ -34,7 +34,7 @@ fun HomePage() {
     ) {
         Button(
             onClick = {
-                ctx.router.tryRoutingTo(RouteOfImageRendererAndConverterPage)
+                ctx.router.tryRoutingTo(RouteOfConverterOfVdAndSvgPage)
             },
             colorPalette = ColorPalettes.Blue
         ) {

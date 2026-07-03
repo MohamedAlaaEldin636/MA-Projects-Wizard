@@ -83,3 +83,12 @@ inline fun <reified T> Result<T>?.toMAResult(): MAResult<T> {
 inline fun <reified T> T.toSuccessMAResult(): MAResult.Success<T> {
 	return MAResult.success(value = this)
 }
+
+inline fun <T, R> MAResult.Immediate<T>.mapImmediate(
+	transformation: (T) -> R,
+): MAResult.Immediate<R> {
+	return when (this) {
+		is MAResult.Success -> MAResult.Success(value = transformation(value))
+		is MAResult.Failure -> this
+	}
+}
