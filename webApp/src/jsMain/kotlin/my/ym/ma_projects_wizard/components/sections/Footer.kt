@@ -16,15 +16,14 @@ import com.varabyte.kobweb.silk.style.base
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.style.vars.color.ColorVar
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
-import org.jetbrains.compose.web.css.cssRem
-import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.dom.Span
 import my.ym.ma_projects_wizard.toSitePalette
+import org.jetbrains.compose.web.css.px
 
 val FooterStyle = CssStyle.base {
     Modifier
         .backgroundColor(colorMode.toSitePalette().nearBackground)
-        .padding(topBottom = 1.5.cssRem, leftRight = 10.percent)
+        .padding(all = 16.px)
 }
 
 @Composable
@@ -32,20 +31,18 @@ fun Footer(modifier: Modifier = Modifier) {
     Box(FooterStyle.toModifier().then(modifier), contentAlignment = Alignment.Center) {
         Span(Modifier.textAlign(TextAlign.Center).toAttrs()) {
             val sitePalette = ColorMode.current.toSitePalette()
-            SpanText("Built with ")
+            SpanText("Built by ")
             Link(
-                "https://github.com/varabyte/kobweb",
-                "Kobweb",
+                "https://mohamedalaaeldin636.github.io/Portfolio-Public/",
+                "Mohamed Alaaeldin",
                 Modifier.setVariable(ColorVar, sitePalette.brand.primary),
                 variant = UncoloredLinkVariant
             )
-            SpanText(", template designed by ")
+            SpanText(", Source Code on ")
 
-            // Huge thanks to UI Rocket (https://ui-rocket.com) for putting this great template design together for us!
-            // If you like what you see here and want help building your own site, consider checking out their services.
             Link(
-                "https://ui-rocket.com",
-                "UI Rocket",
+                "/todo",
+                "GitHub",
                 Modifier.setVariable(ColorVar, sitePalette.brand.accent).whiteSpace(WhiteSpace.NoWrap),
                 variant = UncoloredLinkVariant
             )

@@ -36,31 +36,42 @@ import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.*
 import my.ym.ma_projects_wizard.components.widgets.IconButton
 import my.ym.ma_projects_wizard.toSitePalette
-import org.jetbrains.compose.web.dom.H2
-import org.jetbrains.compose.web.dom.Text
+import org.jetbrains.compose.web.dom.H3
 
 val NavHeaderStyle = CssStyle.base {
-    Modifier.fillMaxWidth().padding(1.cssRem)
+    Modifier.fillMaxWidth()
+}
+
+val NavLinkStyle = CssStyle {
+    /*hover {
+        Modifier.backgroundColor(colorMode.toPalette().color.toRgb().copyf(alpha = 0.33f))
+    }*/
 }
 
 @Composable
 private fun NavLink(path: String, text: String) {
-    Link(path, text, variant = UndecoratedLinkVariant.then(UncoloredLinkVariant))
+    Link(
+        path = path,
+        text = text,
+        variant = UndecoratedLinkVariant.then(UncoloredLinkVariant),
+        modifier = NavLinkStyle.toModifier(),
+    )
 }
 
 @Composable
 private fun MenuItems() {
     NavLink("/", "Home")
+    NavLink("/todo", "Todo")
     NavLink("/about", "About")
 }
 
 @Composable
 private fun ColorModeButton() {
     var colorMode by ColorMode.currentState
-    IconButton(onClick = { colorMode = colorMode.opposite },) {
+    IconButton(onClick = { colorMode = colorMode.opposite }) {
         if (colorMode.isLight) MoonIcon() else SunIcon()
     }
-    Tooltip(ElementTarget.PreviousSibling, "Toggle color mode", placement = PopupPlacement.BottomRight)
+    Tooltip(ElementTarget.PreviousSibling, "Toggle Theme", placement = PopupPlacement.BottomRight)
 }
 
 @Composable
@@ -109,19 +120,22 @@ fun NavHeader() {
             horizontalArrangement = Arrangement.spacedBy(1.cssRem),
         ) {
             Image(
-                modifier = Modifier.height(3.cssRem).display(DisplayStyle.Block),
+                modifier = Modifier.height(2.cssRem).display(DisplayStyle.Block),
                 src = "/logo.png",
                 description = "Logo"
             )
             
-            H2 {
+            H3 {
                 SpanText(
                     modifier = Modifier.color(ColorMode.current.toSitePalette().brand.primary),
                     text = "MA Projects Wizard"
                 )
             }
         }
-
+        
+        //Spacer()
+        //SpanText(text = "Version ${SiteGlobals.version}")
+        
         Spacer()
 
         Row(Modifier.gap(1.5.cssRem).displayIfAtLeast(Breakpoint.MD), verticalAlignment = Alignment.CenterVertically) {
@@ -156,7 +170,7 @@ fun NavHeader() {
 private fun SideMenu(menuState: SideMenuState, close: () -> Unit, onAnimationEnd: () -> Unit) {
     Overlay(
         Modifier
-            .setVariable(OverlayVars.BackgroundColor, Colors.Transparent)
+            .setVariable(OverlayVars.BackgroundColor, Colors.Transparent/*palette.background.toRgb().copyf(alpha = 0.33f)*/)
             .onClick { close() }
     ) {
         key(menuState) { // Force recompute animation parameters when close button is clicked
@@ -167,7 +181,7 @@ private fun SideMenu(menuState: SideMenuState, close: () -> Unit, onAnimationEnd
                     .align(Alignment.CenterEnd)
                     // Close button will appear roughly over the hamburger button, so the user can close
                     // things without moving their finger / cursor much.
-                    .padding(top = 1.cssRem, leftRight = 1.cssRem)
+                    .padding(top = 2.cssRem, leftRight = 1.cssRem)
                     .gap(1.5.cssRem)
                     .backgroundColor(ColorMode.current.toSitePalette().nearBackground)
                     .animation(

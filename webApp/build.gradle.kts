@@ -23,6 +23,8 @@ kobweb {
         index {
             description.set("Utilities Needed for KMP Development Inshallah.")
         }
+        
+        globals.put("version", "1.0.0")
     }
 }
 

@@ -5,7 +5,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import com.varabyte.kobweb.compose.ui.toAttrs
-import org.jetbrains.compose.web.dom.Div
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
@@ -23,7 +22,9 @@ import com.varabyte.kobweb.compose.ui.modifiers.color
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxHeight
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
-import com.varabyte.kobweb.compose.ui.modifiers.height
+import com.varabyte.kobweb.compose.ui.modifiers.margin
+import com.varabyte.kobweb.compose.ui.modifiers.minHeight
+import com.varabyte.kobweb.compose.ui.modifiers.minWidth
 import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
@@ -70,8 +71,15 @@ private fun PageContent(
 	Column(
 		modifier = Modifier.fillMaxSize(),
 		horizontalAlignment = Alignment.CenterHorizontally,
+		verticalArrangement = Arrangement.spacedBy(space = 12.px),
 	) {
-		H3 {
+		H3(
+			attrs = Modifier
+				.minWidth(0.px)
+				.minHeight(0.px)
+				.margin(all = 0.px)
+				.toAttrs()
+		) {
 			SpanText(text = "Detected Content -> ")
 			
 			SpanText(
@@ -112,7 +120,5 @@ private fun PageContent(
 				state = state,
 			)
 		}
-		
-		Div(attrs = Modifier.height(24.px).toAttrs())
 	}
 }

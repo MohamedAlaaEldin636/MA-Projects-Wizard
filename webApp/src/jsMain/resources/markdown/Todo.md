@@ -37,3 +37,8 @@ drawable text 4- show image (disabling current shows)
 - Think of adding this to header as well or maybe just externally mention it (to be thought of later Inshallah)
 
 - Update this project's README.md for repo's appearance Inshallah.
+
+- Maybe add in footer Get Desktop App Inshallah.
+
+- in footer link github to actual repo when gets posted Inshallah.
+  - in footer maybe add version and in desktop so u know manually u r not on latest till make desktop see ktor and get latest github release Inshallah.

@@ -1,11 +1,10 @@
 package my.ym.ma_projects_wizard.pages
 
-import androidx.compose.runtime.Composable
+/*import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import com.varabyte.kobweb.browser.file.readBytes
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.core.Page
 import com.varabyte.kobweb.core.data.add
@@ -111,4 +110,4 @@ fun CustomFileInput() {
 	
 	// Optional: Display the selected file name next to it
 	Text("Selected: $fileName")
-}
+}*/
