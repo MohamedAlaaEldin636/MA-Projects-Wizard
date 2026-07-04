@@ -23,6 +23,7 @@ import my.ym.ma_projects_wizard.viewModels.converterOfVdAndSvg.models.ConverterO
 import my.ym.ma_projects_wizard.viewModels.converterOfVdAndSvg.models.ConverterOfVdAndSvgState
 import org.jetbrains.compose.web.attributes.placeholder
 import org.jetbrains.compose.web.css.LineStyle
+import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.TextArea
 
@@ -36,7 +37,7 @@ fun InputContent(
 	Column(
 		modifier = modifier,
 		horizontalAlignment = Alignment.CenterHorizontally,
-		verticalArrangement = Arrangement.spacedBy(16.px),
+		verticalArrangement = Arrangement.spacedBy(1.cssRem),
 	) {
 		FilePickerButton(
 			modifier = Modifier.fillMaxWidth(),
@@ -77,7 +78,7 @@ fun InputContent(
 				.fillMaxWidth()
 				.weight(1)
 				.background(Colors.Transparent)
-				.borderRadius(8.px)
+				.borderRadius(0.5.cssRem)
 				.border(
 					width = 2.px,
 					style = LineStyle.Solid,
@@ -87,7 +88,7 @@ fun InputContent(
 					property("resize", "none")
 					property("outline", "none")
 				}
-				.padding(all = 12.px)
+				.padding(all = 0.75.cssRem)
 				.toAttrs {
 					onInput { event ->
 						handleIntent(

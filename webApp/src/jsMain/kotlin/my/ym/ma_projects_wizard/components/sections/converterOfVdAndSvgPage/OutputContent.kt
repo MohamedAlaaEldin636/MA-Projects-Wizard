@@ -33,6 +33,7 @@ import my.ym.ma_projects_wizard.utils.overflowWrapAnywhere
 import my.ym.ma_projects_wizard.viewModels.converterOfVdAndSvg.models.ConverterOfVdAndSvgIntent
 import my.ym.ma_projects_wizard.viewModels.converterOfVdAndSvg.models.ConverterOfVdAndSvgState
 import org.jetbrains.compose.web.css.LineStyle
+import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Div
@@ -48,7 +49,7 @@ fun OutputContent(
 	Column(
 		modifier = modifier,
 		horizontalAlignment = Alignment.CenterHorizontally,
-		verticalArrangement = Arrangement.spacedBy(16.px),
+		verticalArrangement = Arrangement.spacedBy(1.cssRem),
 	) {
 		Button(
 			modifier = Modifier.fillMaxWidth(),
@@ -96,13 +97,13 @@ fun OutputContent(
 			modifier = Modifier
 				.fillMaxWidth()
 				.weight(1f)
-				.borderRadius(8.px)
+				.borderRadius(0.5.cssRem)
 				.border(
 					width = 2.px,
 					style = LineStyle.Solid,
 					color = ColorMode.current.toPalette().color,
 				)
-				.padding(all = 12.px),
+				.padding(all = 0.75.cssRem),
 			contentAlignment = Alignment.Center,
 		) {
 			var htmlDivElement by remember { mutableStateOf<HTMLDivElement?>(null) }
@@ -143,7 +144,7 @@ fun OutputContent(
 					.maxWidth(100.percent)
 					.maxHeight(100.percent)
 					.minWidth(0.px)   // Forces it to ignore intrinsic width
-					.minHeight(0.px)
+					.minHeight(200.px)
 					.toAttrs {
 						ref {
 							htmlDivElement = it

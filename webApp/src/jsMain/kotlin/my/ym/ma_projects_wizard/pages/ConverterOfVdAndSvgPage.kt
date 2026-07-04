@@ -36,6 +36,7 @@ import my.ym.ma_projects_wizard.viewModels.ConverterOfVdAndSvgViewModelImpl
 import my.ym.ma_projects_wizard.viewModels.converterOfVdAndSvg.models.ConverterOfVdAndSvgIntent
 import my.ym.ma_projects_wizard.viewModels.converterOfVdAndSvg.models.ConverterOfVdAndSvgState
 import org.jetbrains.compose.web.css.LineStyle
+import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.H3
 
@@ -71,7 +72,7 @@ private fun PageContent(
 	Column(
 		modifier = Modifier.fillMaxSize(),
 		horizontalAlignment = Alignment.CenterHorizontally,
-		verticalArrangement = Arrangement.spacedBy(space = 12.px),
+		verticalArrangement = Arrangement.spacedBy(space = 0.75.cssRem),
 	) {
 		H3(
 			attrs = Modifier
@@ -99,14 +100,14 @@ private fun PageContent(
 			modifier = Modifier
 				.fillMaxWidth()
 				.weight(1)
-				.borderRadius(16.px)
+				.borderRadius(1.cssRem)
 				.border(
 					color = ColorMode.current.toSitePalette().brand.primary,
 					width = 2.px,
 					style = LineStyle.Solid,
 				)
-				.padding(all = 16.px),
-			horizontalArrangement = Arrangement.spacedBy(space = 16.px),
+				.padding(all = 1.cssRem),
+			horizontalArrangement = Arrangement.spacedBy(space = 1.cssRem),
 		) {
 			InputContent(
 				modifier = Modifier.fillMaxHeight().fillMaxWidth(),

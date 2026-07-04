@@ -63,12 +63,12 @@ private fun NavItemButton(
         modifier = CustomInteractiveCardStyle.toModifier()
             .fillMaxWidth()
             
-            .borderRadius(12.px)
+            .borderRadius(0.75.cssRem)
             .cursor(Cursor.Pointer)
             
             .onClick { ctx.router.navigateTo(route) }
             
-            .padding(16.px),
+            .padding(1.cssRem),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         val textColor = if (colorMode.isDark) {
@@ -93,7 +93,7 @@ private fun NavItemButton(
         }
         SpanText(
             modifier = Modifier
-                .padding(top = 8.px)
+                .padding(top = 0.5.cssRem)
                 .whiteSpace(WhiteSpace.PreLine)
                 .textAlign(TextAlign.Center)
                 .fontSize(1.cssRem)

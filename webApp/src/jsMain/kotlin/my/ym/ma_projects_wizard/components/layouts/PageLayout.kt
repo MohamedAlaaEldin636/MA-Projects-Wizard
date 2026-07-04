@@ -27,7 +27,6 @@ import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.css.vh
 import my.ym.ma_projects_wizard.components.sections.NavHeader
 import my.ym.ma_projects_wizard.toSitePalette
-import org.jetbrains.compose.web.css.px
 
 val PageContentStyle = CssStyle {
     base { Modifier.fillMaxSize() }
@@ -95,9 +94,9 @@ fun PageLayout(ctx: PageContext, content: @Composable ColumnScope.() -> Unit) {
             // https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context
             // Some people might have used z-index instead, but best practice is to avoid that if possible, because
             // as a site gets complex, Z-fighting can be a huge pain to track down.
-            modifier = Modifier.fillMaxSize().gridRow(1).padding(all = 16.px),
+            modifier = Modifier.fillMaxSize().gridRow(1).padding(all = 1.cssRem),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(space = 12.px)
+            verticalArrangement = Arrangement.spacedBy(space = 0.75.cssRem)
         ) {
             NavHeader()
             
