@@ -16,11 +16,4 @@ sealed class ConverterOfVdAndSvgContentHolder {
 		return if (this is IFile) fileDetails?.fileName else null
 	}
 	
-	fun isEmpty(): Boolean {
-		return when (this) {
-			is IFile -> fileDetails == null
-			is IText -> text.isBlank()
-		}
-	}
-	
 }

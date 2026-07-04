@@ -113,20 +113,6 @@ private fun PageContent(
 			)
 		}
 		
-		// todo COLLECT ALL TODOS IN A SINGLE PLACE INSHALLAH. ex. local gitignored place Inshallah
-		//  then make new master as this then compat into 1 commit Inshallah, or add it in project's README.md 3ade Inshallah,
-		//  and maybe even add it here too Inshallah.
-		
-		// todo re-adjust page layout to contain that padding already and maybe footor of version and made by who
-		//  or in header since it already takes space Inshallah.
 		Div(attrs = Modifier.height(24.px).toAttrs())
 	}
 }
-
-// todo better code structuring to be able to show on desktop too Inshallah.
-
-// todo multiple files at same time Inshallah + drag n drop Inshallah.
-//  files should have own placement as a small flow row 2 rows max and hz scroll with close click
-//  in case want files + 1 text as well Inshallah
-
-// todo 3 more buttons 1- inverse background switch, 2- show svg text 3- show vector drawable text 4- show image
