@@ -3,7 +3,8 @@ package my.ym.ma_projects_wizard.components.sections
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.css.WhiteSpace
-import com.varabyte.kobweb.compose.foundation.layout.Box
+import com.varabyte.kobweb.compose.foundation.layout.Arrangement
+import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
@@ -19,6 +20,7 @@ import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.dom.Span
 import my.ym.ma_projects_wizard.toSitePalette
 import org.jetbrains.compose.web.css.cssRem
+import org.jetbrains.compose.web.css.px
 
 val FooterStyle = CssStyle.base {
     Modifier
@@ -28,8 +30,18 @@ val FooterStyle = CssStyle.base {
 
 @Composable
 fun Footer(modifier: Modifier = Modifier) {
-    Box(FooterStyle.toModifier().then(modifier), contentAlignment = Alignment.Center) {
-        Span(Modifier.textAlign(TextAlign.Center).toAttrs()) {
+    Row(
+        modifier = FooterStyle.toModifier().then(modifier),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(space = 1.cssRem),
+    ) {
+        Span(
+            attrs = Modifier
+                .weight(3f)
+                .width(0.px)
+                .textAlign(TextAlign.Center)
+                .toAttrs()
+        ) {
             val sitePalette = ColorMode.current.toSitePalette()
             SpanText("Built by ")
             Link(

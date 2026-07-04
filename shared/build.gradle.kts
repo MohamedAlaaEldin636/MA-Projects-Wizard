@@ -1,6 +1,18 @@
+import com.codingfeline.buildkonfig.compiler.FieldSpec.Type
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.buildkonfig)
+}
+
+buildkonfig {
+    packageName = "my.ym.ma_projects_wizard.shared"
+    exposeObjectWithName = "BuildKonfig"
+    
+    defaultConfigs {
+        buildConfigField(Type.STRING, "VERSION", "1.0.0")
+    }
 }
 
 kotlin {

@@ -1,39 +1,28 @@
-This is a Kotlin Multiplatform project targeting Web, Desktop (JVM).
+# MA Projects Wizard
 
-* [/shared](./shared/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./shared/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./shared/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./shared/src/jvmMain/kotlin)
-    folder is the appropriate location.
-
-### Running the apps
-
-Use the run configurations provided by the run widget in your IDE's toolbar. You can also use these commands and options:
-
-- Desktop app:
-  - Hot reload: `./gradlew :desktopApp:hotRun --auto`
-  - Standard run: `./gradlew :desktopApp:run`
-- Web app:
-  - Wasm target (faster, modern browsers): `./gradlew :webApp:wasmJsBrowserDevelopmentRun`
-  - JS target (slower, supports older browsers): `./gradlew :webApp:jsBrowserDevelopmentRun`
-
-### Running tests
-
-Use the run button in your IDE's editor gutter, or run tests using Gradle tasks:
-
-- Desktop tests: `./gradlew :shared:jvmTest`
-- Web tests:
-  - Wasm target: `./gradlew :shared:wasmJsTest`
-  - JS target: `./gradlew :shared:jsTest`
+This project is designed to simplify and accelerate common tasks in Kotlin Multiplatform (KMP) development, Inshallah.
 
 ---
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html),
-[Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform/#compose-multiplatform),
-[Kotlin/Wasm](https://kotl.in/wasm/)…
+## The Purpose
 
-We would appreciate your feedback on Compose/Web and Kotlin/Wasm in the public Slack channel [#compose-web](https://slack-chats.kotlinlang.org/c/compose-web).
-If you face any issues, please report them on [YouTrack](https://youtrack.jetbrains.com/newIssue?project=CMP).
+While developing with KMP (Kotlin Multiplatform), I noticed a persistent workflow challenge: visualizing vector drawables. Currently, the IDE can only preview them within the Android target, not inside the `commonMain` source set. This forces developers to manually copy the asset into the Android module just to view it, and then delete it afterward—a tedious hassle.
+
+Furthermore, importing an SVG as a VectorDrawable (or vice versa) using the native IDE tools automatically dumps the asset into the Android target instead of `commonMain`.
+
+To solve this, I decided to build a dedicated desktop and web application to handle these asset pipelines seamlessly. I hope it becomes a valuable tool for the community, Inshallah.
+
+## Development Notes
+
+* **Why an App Instead of a Plugin?**
+  Since building an IDE plugin introduces significant development overhead, I started with a Desktop/Web application for faster iteration. If this tool proves highly effective, I plan to migrate it into an official IDE plugin to bring these features directly into the workspace, Inshallah.
+
+* **Future Tools:**
+  Currently, only the asset conversion tool is live. However, I have built several other internal utilities. If they prove helpful, I will integrate them here in the future, Inshallah. This is why the project carries a generic name rather than one specific to image conversion.
+
+* **To-Do Roadmap:**
+  I have included a dedicated [To-Do page](/webApp/src/jsMain/resources/markdown/Todo.md) outlining features I plan to build to make this tool even more helpful in the future, Inshallah. Please feel free to look it over and suggest any additional features or ideas you would like to see implemented Inshallah.
+
+### Attributions
+
+* Some boilerplate files and configurations originate from the initial template provided by the `kobweb create` command, Inshallah.

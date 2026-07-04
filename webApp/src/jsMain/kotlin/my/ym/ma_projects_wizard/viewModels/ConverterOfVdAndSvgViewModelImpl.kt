@@ -87,7 +87,7 @@ class ConverterOfVdAndSvgViewModelImpl : ConverterOfVdAndSvgViewModel() {
 				saveAs(
 					extension = "xml",
 					contentHolder = stateValue.contentHolder,
-					content = intent.outputValue.svgString,
+					content = intent.outputValue.vectorDrawableString,
 				)
 			}
 		}

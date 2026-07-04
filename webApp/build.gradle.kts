@@ -7,16 +7,10 @@ plugins {
     
     alias(libs.plugins.kobweb.application)
     alias(libs.plugins.kobwebx.markdown)
-    //alias(libs.plugins.buildkonfig)
 }
 
 group = "my.ym.ma_projects_wizard"
 version = "1.0.0"
-
-/*buildkonfig {
-    packageName = "my.ym.ma_projects_wizard"
-    exposeObjectWithName = "BuildKonfig"
-}*/
 
 kobweb {
     app {
@@ -24,7 +18,12 @@ kobweb {
             description.set("Utilities Needed for KMP Development Inshallah.")
         }
         
-        globals.put("version", "1.0.0")
+        //globals.put("version", "1.0.0")
+        // can then get it via -> com.varabyte.kobweb.core.AppGlobals["version"] in code Inshallah.
+    }
+    
+    markdown {
+        imports.add("my.ym.ma_projects_wizard.SiteGlobals")
     }
 }
 

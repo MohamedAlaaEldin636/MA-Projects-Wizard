@@ -13,9 +13,13 @@ title: Todo
 
 ---
 
-## Todos
+## 📋 Todos
 
-- Clean web kobweb template to remove unncessary usage of kt files and/or code Inshallah.
+- make desktop app soon Inshallah.
+
+- Clean web kobweb template to remove unnecessary usage of kt files and/or code Inshallah.
+
+- Add in header Desktop which has page for download for desktop Inshallah.
 
 - Modify `PageLayout` to make a header with less space relative to body and include footer padding and maybe add 
 version number and my name or link to myself, Also in header beside dark/light mode icon add github icon too 
@@ -42,3 +46,5 @@ drawable text 4- show image (disabling current shows)
 
 - in footer link github to actual repo when gets posted Inshallah.
   - in footer maybe add version and in desktop so u know manually u r not on latest till make desktop see ktor and get latest github release Inshallah.
+
+- use data store or another lib for local key value pair save for desktop inshallah.
