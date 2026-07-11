@@ -2,6 +2,11 @@
 
 This project is designed to simplify and accelerate common tasks in Kotlin Multiplatform (KMP) development, Inshallah.
 
+You can visit the website of this project hosted on GitHub Pages 
+[here 🡵 👉🌐](https://mohamedalaaeldin636.github.io/MA-Projects-Wizard/) Inshallah.
+
+Note the project is expected to add desktop support soon Inshallah.
+
 ---
 
 ## The Purpose

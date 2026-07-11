@@ -53,7 +53,7 @@ fun Footer(modifier: Modifier = Modifier) {
             SpanText(", Source Code on ")
 
             Link(
-                "/todo",
+                "https://github.com/MohamedAlaaEldin636/MA-Projects-Wizard",
                 "GitHub",
                 Modifier.setVariable(ColorVar, sitePalette.brand.accent).whiteSpace(WhiteSpace.NoWrap),
                 variant = UncoloredLinkVariant

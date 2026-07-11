@@ -9,6 +9,8 @@ This project is designed to simplify and accelerate common tasks in Kotlin Multi
 
 This App Represents version ${SiteGlobals.AppVersion} Inshallah.
 
+The Project currently has a web app using kobweb and soon will support desktop via compose multiplatform Inshallah.
+
 ---
 
 ## 🎯 The Purpose
