@@ -15,6 +15,8 @@ title: Todo
 
 ## 📋 Todos
 
+- need to make a `Desktop` menu item and in it explain it is to come soon Inshallah.
+
 - make desktop app soon Inshallah.
 
 - Clean web kobweb template to remove unnecessary usage of kt files and/or code Inshallah.
