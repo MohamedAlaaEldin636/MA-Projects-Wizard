@@ -65,8 +65,7 @@ jobs:
       # --------------------------------------------------
       - name: Run export to prepare for deployment Inshallah
         run: |
-          cd webApp
-          ../kobweb-${{ env.KOBWEB_CLI_VERSION }}/bin/kobweb export --notty --layout static
+          ./kobweb-${{ env.KOBWEB_CLI_VERSION }}/bin/kobweb export -p webApp --notty --layout static
 
       # --------------------------------------------------
       # PHASE 3: Deploy Inshallah
