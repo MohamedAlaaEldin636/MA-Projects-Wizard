@@ -66,18 +66,11 @@ jobs:
       - name: List files for debugging Inshallah
         run: |
           echo "=== Root Directory ==="
-          ls -la
+          ls
           echo "=== Inside webApp Directory ==="
-          ls -la webApp
-
-      - name: List files for debugging Inshallah V2
-        run: |
-          echo "=== Root Directory ==="
-          ls -la
-          echo "=== Inside webApp Directory ==="
-          ls -la webApp
+          ls webApp
           echo "=== Inside .kobweb Directory ==="
-          ls -la webApp/.kobweb
+          ls webApp/.kobweb
 
       - name: Run export to prepare for deployment Inshallah
         run: |
