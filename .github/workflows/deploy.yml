@@ -63,6 +63,22 @@ jobs:
       # --------------------------------------------------
       # PHASE 3: Prepare for deployment Inshallah
       # --------------------------------------------------
+      - name: List files for debugging Inshallah
+        run: |
+          echo "=== Root Directory ==="
+          ls -la
+          echo "=== Inside webApp Directory ==="
+          ls -la webApp
+
+      - name: List files for debugging Inshallah V2
+        run: |
+          echo "=== Root Directory ==="
+          ls -la
+          echo "=== Inside webApp Directory ==="
+          ls -la webApp
+          echo "=== Inside .kobweb Directory ==="
+          ls -la webApp/.kobweb
+
       - name: Run export to prepare for deployment Inshallah
         run: |
           ./kobweb-${{ env.KOBWEB_CLI_VERSION }}/bin/kobweb export -p webApp --notty --layout static
