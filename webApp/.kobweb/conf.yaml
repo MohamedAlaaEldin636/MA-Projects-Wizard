@@ -1,5 +1,6 @@
 site:
   title: "MA Projects Wizard"
+  basePath: "MA-Projects-Wizard"
 
 server:
   files:
